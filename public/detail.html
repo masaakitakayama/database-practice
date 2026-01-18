@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css?001">
+<link rel="stylesheet" href="css/detail.css">
+<title>ユーザー詳細</title>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a style="color: white;"　href="#" class="active">※ここにロゴ</a>
+        </div>
+        <nav>
+           <ul>
+                <li><a href="./index.html" class="active">ホーム</a></li>
+                <li><a href="./stats.html">統計ページ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>ユーザー詳細情報</h1>
+        <hr>
+        <div id="user-detail">
+            <p>読み込み中...</p>
+        </div>
+        <nav class="home-nav"><a class="home-nav-item" href="index.html">一覧へ戻る</a></nav>
+    </main>
+
+    <script>
+        // URLの末尾からIDを取得 (例: ?id=123)
+        const params = new URLSearchParams(window.location.search);
+        const userId = params.get('id');
+
+        if (userId) {
+        fetch(`https://takayama.cloudfree.jp/database_practice/api/users/${userId}`)
+            .then(res => res.json())
+            .then(user => {
+                const detailDiv = document.getElementById('user-detail');
+                if (user) {
+                    detailDiv.innerHTML = `
+                        <div class="user-card-content">
+                        <div class="info-group basic-info">
+                            <div class="info-item">
+                                <span class="label">ID:</span>
+                                <span class="value">${user.id}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">名前:</span>
+                                <span class="value">${user.user_name}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">メール:</span>
+                                <span class="value">${user.email}</span>
+                            </div>
+                        </div>
+
+                        <hr> <div class="info-group organization-info">
+                            <div class="info-item">
+                                <span class="label">入社日:</span>
+                                <span class="value">${user.joined_date ? user.joined_date.slice(0, 10) : '未登録'}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">所属部署:</span>
+                                <span class="value">${user.Department || '未登録'}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">ポジション:</span>
+                                <span class="value">${user.position || '未登録'}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">主要スキル:</span>
+                                <span class="tag">${user.primary_skill || '未登録'}</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    `;
+                } else {
+                    detailDiv.innerHTML = '<p>ユーザーが見つかりませんでした。</p>';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

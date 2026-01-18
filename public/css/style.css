@@ -1,0 +1,187 @@
+:root {
+    /* 深みのある緑の定義 */
+    --main-green: #5c8d50;    /* カード上部：落ち着いた中濃度の緑 */
+    --dark-green: #2d4126;    /* ヘッダー：重厚感のある深い緑 */
+    --text-color: #2c3e50;
+    --label-color: #7f8c8d;
+    --bg-gray: #f4f7f4;       /* 背景：ごくわずかに緑を含んだグレー */
+}
+
+
+
+body {
+
+    margin: 0;
+
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+
+    background-color: var(--bg-gray);
+
+    color: var(--text-color);
+
+    -webkit-font-smoothing: antialiased;
+
+}
+
+
+
+/* ヘッダー：深緑 */
+
+header {
+
+    background-color: var(--dark-green);
+
+    color: white;
+
+    padding: 12px 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+
+}
+
+
+
+.header-left { display: flex; align-items: center; gap: 12px; }
+
+header h1 { font-size: 1.1rem; margin: 0; font-weight: 500; letter-spacing: 0.5px; }
+
+
+
+header nav ul { display: flex; list-style: none; gap: 30px; margin: 0; padding: 0; }
+
+header nav a { color: #bdc9ba; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+
+header nav a:hover, header nav a.active { color: white; }
+
+header nav a.active { border-bottom: 2px solid #8cb385; padding-bottom: 4px; }
+
+
+
+.header-right { display: flex; align-items: center; gap: 20px; }
+
+.user-badge {
+
+    background: #e9f0e8; color: var(--dark-green);
+
+    width: 34px; height: 34px; border-radius: 50%;
+
+    display: flex; align-items: center; justify-content: center; font-weight: bold;
+
+}
+
+
+
+/* ページタイトル */
+
+main { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+.page-title {
+
+    font-size: 2.2rem;
+
+    border-left: 8px solid var(--main-green);
+
+    padding-left: 20px;
+
+    margin: 0 0 30px 0;
+
+    color: var(--dark-green);
+
+}
+
+
+
+/* 検索窓：目に優しい白ベース */
+
+.search-container {
+
+    display: flex; max-width: 500px; background: white;
+
+    border: 1px solid #d1d9d0; border-radius: 6px;
+
+    margin-bottom: 40px; overflow: hidden;
+
+}
+
+.search-container input {
+
+    flex: 1; padding: 12px 15px; border: none; outline: none; font-size: 0.95rem;
+
+}
+
+.search-container button {
+
+    padding: 0 20px; background: #f9faf9; border: none;
+
+    border-left: 1px solid #d1d9d0; cursor: pointer; color: var(--dark-green);
+
+}
+
+.search-container button:hover { background: #edf2ed; }
+
+
+
+/* カードグリッド */
+
+.container {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    gap: 30px;
+
+}
+
+
+
+/* カード：深緑のアクセント */
+
+.group {
+
+    background: white; border-radius: 14px; overflow: hidden;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+
+    text-decoration: none; color: inherit; transition: all 0.3s ease;
+
+    border: 1px solid #e2e8e1;
+
+}
+
+.group:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+
+}
+
+.info-row{
+    margin: 5% 0 5% 5%;
+}
+
+
+.card-top {
+
+    background-color: var(--main-green); color: white;
+
+    padding: 25px 20px; display: flex; align-items: center; gap: 15px;
+
+}
+
+.avatar {
+
+    background: rgba(255,255,255,0.25); width: 55px; height: 55px;
+
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+
+    font-size: 1.6rem; font-weight: bold; border: 1px solid rgba(255,255,255,0.3);
+
+}

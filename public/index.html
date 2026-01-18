@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー管理システム</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a style="color: white;"　href="#" class="active">※ここにロゴ</a>
+        </div>
+        <nav>
+           <ul>
+                <li><a href="./index.html" class="active">ホーム</a></li>
+                <li><a href="./stats.html">統計ページ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h2 class="page-title">ユーザー一覧</h2>
+            <div class="search-container">
+                <input type="text" id="userSearchInput" placeholder="名前を検索（漢字・かな・カナ）。姓と名の間は半角スペース空ける。">
+                <button id="searchButton">🔍</button>
+            </div>
+        </div>
+
+        <div class="container" id="userContainer">
+            </div>
+    </main>
+<script src="./js/home.js"></script>
+</body>
+</html>
