@@ -50,7 +50,7 @@ header {
 .header-left { display: flex; align-items: center; gap: 12px; }
 
 .header-logo{
-    width: 100%;
+    width: 25%;
     height: auto;
 }
 
