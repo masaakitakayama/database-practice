@@ -7,7 +7,7 @@ let allUsers = [];
 async function loadUsers() {
     try {
         // fetch urlはショートカット記載では動作出来なかったので、フルパスにて表記した。
-        const response = await fetch('https://takayama.cloudfree.jp/database_practice/api/users');
+        const response = await fetch('/database_practice/api/users');
         if (!response.ok) throw new Error('Network error');
         
         allUsers = await response.json();
