@@ -33,7 +33,7 @@
         const userId = params.get('id');
 
         if (userId) {
-        fetch(`https://takayama.cloudfree.jp/database_practice/api/users/${userId}`)
+        fetch(`/api/users/${userId}`)
             .then(res => res.json())
             .then(user => {
                 const detailDiv = document.getElementById('user-detail');
