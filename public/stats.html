@@ -63,7 +63,7 @@
     // ページが読み込まれたら実行
     document.addEventListener('DOMContentLoaded', () => {
         // サーバーのAPI（/api/stats）からデータを取ってくる
-        fetch('https://takayama.cloudfree.jp/database_practice/api/stats')
+        fetch('/api/stats')
             .then(response => {
                 if (!response.ok) throw new Error('ネットワークエラー');
                 return response.json();
